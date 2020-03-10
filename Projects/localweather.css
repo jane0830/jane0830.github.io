@@ -1,0 +1,79 @@
+* {
+font-family: 'Sniglet', cursive; 
+  padding: 0;
+  margin: 0;
+  border: 0;  
+}
+body {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.daytime {
+  background: linear-gradient(#6498ed, #aeccfc, #ffffff) no-repeat center fixed;
+  background-size: cover; 
+  
+}
+
+.nighttime {
+   background-color: black;
+}
+
+
+.container{ 
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;  
+  width: 30%;
+  height: auto;  
+}
+
+.weather-container {
+  /*background-color: coral;*/
+  text-align: center;
+  color: black;
+}
+
+.weather-description {
+ /* background-color: blue;*/
+  text-align: center;  
+  padding: 2%;
+  font-size: 40px;
+}
+.weather-icon-container { 
+  /*background-color: coral;*/
+  text-align: center;  
+  padding: 10%;
+  font-size: 150px;
+  color: #1f1f18;
+  
+}
+
+.temperature-value {
+  /*background-color: blue;*/
+  text-align: center;  
+  padding: 5%;
+  font-size: 40px;
+}
+.temperature-description {
+  /*background-color: coral;*/
+  text-align: center;  
+  padding: 5%;
+  font-size: 30px;
+}
+.location {
+  /*background-color: grey;*/
+  text-align: center;  
+  padding: 5%;
+  font-size: 30px;
+}
+
+.current-date {
+  /*background-color: blue;*/
+  text-align: center;  
+  padding: 5%;
+  font-size: 30px;
+}
