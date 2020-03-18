@@ -14,8 +14,8 @@ body {
 }
 
 .daytime {
-    background-color: #FFFFFF;
-    background: #FFFFFF -webkit-gradient(linear, left top, left bottom, from(#54A4C5), to(#FFFFFF)) no-repeat;
+    background-color: #AADAFA;
+    background: #AADAFA -webkit-gradient(linear, left top, left bottom, from(#54A4C5), to(#AADAFA)) no-repeat;
 }
 
 
@@ -31,6 +31,12 @@ body {
     height: 100%;
 }
 
+.daytime .clouds {
+    z-index: 2;
+    background: transparent url('../images/daytime-clouds.png') repeat top center;
+    animation: move-clouds-back 200s linear infinite;
+}
+
 .nighttime .stars {
     z-index: 0;
     background: #000 url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
@@ -44,7 +50,7 @@ body {
 
 .nighttime .clouds {
     z-index: 2;
-    background: transparent url('../images/night-cloud.png') repeat top center;
+    background: transparent url('../images/night-clouds.png') repeat top center;
     animation: move-clouds-back 200s linear infinite;
 }
 
