@@ -1,11 +1,39 @@
-//  Select elements
-const bodyElement = document.querySelector("body");
-const notificationElement = document.querySelector(".weather-description p");
-const iconElement = document.querySelector("#weather-icon");
-const tempElement = document.querySelector(".temperature-value p");
-const descriptionElem = document.querySelector(".temperature-description p");
-const locationElem = document.querySelector(".location p");
-const currDateElement = document.querySelector(".current-date p");
+//get our icons setup in our app
+const icons = {
+    "clear sky": "fas fa-sun",
+    "few clouds": "fas fa-cloud-sun",
+    "scattered clouds": "fas fa-cloud",
+    "broken clouds": "fas fa-cloud-meatball",
+    "shower rain": "fas fa-cloud-showers-heavy",
+    "rain": "fas fa-cloud-rain",
+    "thunderstorm": "fas fa-poo-storm",
+    "snow": "fas fa-snowflake",
+    "mist": "fas fa-wind"
+};
+
+//variables use in my getCurrentDateString
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+//it prevent race condition
+let bodyElement, notificationElement, iconElement, tempElement, descriptionElem, locationElem, currDateElement;
+function onload() {
+    bodyElement = document.querySelector("body");
+    notificationElement = document.querySelector(".weather-description p");
+    iconElement = document.querySelector("#weather-icon");
+    tempElement = document.querySelector(".temperature-value p");
+    descriptionElem = document.querySelector(".temperature-description p");
+    locationElem = document.querySelector(".location p");
+    currDateElement = document.querySelector(".current-date p");
+
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(getWeather, showError);
+    } else {
+        notificationElement.style.display = "block";
+        notificationElement.innerHTML = "<p>Browser Doesn't Support Geolocation.</p>";
+    }
+ 
+};
 
 
 //App data
@@ -19,20 +47,7 @@ weather.temperature = {
 const key = "86f83a43744c26b6095587c0c5b4fbe7";
 
 //check if browser support geolocation
-if("geolocation" in navigator){  
-  navigator.geolocation.getCurrentPosition(setPosition, showError);  
-}else{
-  notificationElement.style.display = "block";
-  notificationElement.innerHTML = "<p>Browser Doesn't Support Geolocation.</p>";  
-}
 
-//Set user's position
-function setPosition(position){
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-  
-  getWeather(latitude, longitude);  
-}
 
 //Show error when is an issue with geolocation service
 function showError(error) {
@@ -41,26 +56,28 @@ function showError(error) {
 }
 
 //Get weather from api provider
-function getWeather(latitude, longitude){
-  let api =`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
+function getWeather(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let api =`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
   
-  fetch(api) 
-    .then(function(response){
-    let data = response.json();
-    return data;
-  })
-  .then(function(data){
-    console.log(data);
-        weather.sunrise = data.sys.sunrise;
-        weather.sunset = data.sys.sunset;
-        weather.temperature.value = kelvinToCelsius(data.main.temp);
-        weather.description = data.weather[0].description;
-        weather.iconId = data.weather[0].icon;
-        weather.city = data.name;
-        weather.country = data.sys.country;
-           
-        displayWeather();
-  })  
+    fetch(api)
+        .then(function (response) {
+        let data = response.json();
+        return data;
+        })
+
+        .then(function (data) {
+            console.log(data);
+            weather.sunrise = data.sys.sunrise;
+            weather.sunset = data.sys.sunset;
+            weather.temperature.value = kelvinToCelsius(data.main.temp);
+            weather.description = data.weather[0].description;
+            weather.iconId = data.weather[0].icon;
+            weather.city = data.name;
+            weather.country = data.sys.country;
+            displayWeather();
+        })  
 }
 
 // display weather to ui
@@ -94,13 +111,11 @@ tempElement.addEventListener("click", function(){
     weather.temperature.unit = "fahrenheit";
   }else{
     tempElement.innerHTML = `${weather.temperature.value}º <span>C</span>`;
-     weather.temperature.unit = "celsius";
+    weather.temperature.unit = "celsius";
   }
 });
 
-//variables use in my getCurrentDateString
-const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
 
 //get the current day 
 function getCurrentDateString(){
@@ -112,18 +127,6 @@ function getCurrentDateString(){
   return `${dayOfWeek}, ${month} ${dayOfMonth}`;
 };
 
-//get our icons setup in our app
-const icons = {
-  "clear sky": "fas fa-sun",
-  "few clouds": "fas fa-cloud-sun",
-  "scattered clouds": "fas fa-cloud",
-  "broken clouds": "fas fa-cloud-meatball",
-  "shower rain": "fas fa-cloud-showers-heavy",
-  "rain": "fas fa-cloud-rain",
-  "thunderstorm": "fas fa-poo-storm",
-  "snow": "fas fa-snowflake",
-  "mist": "fas fa-wind"
-};
 
 //dtermines whether or not it is day time 
 function getTimeOfDay(sunrise, sunset){

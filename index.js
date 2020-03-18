@@ -1,6 +1,6 @@
 //this is to manipulate the navbar
 $(document).ready(function(){
-  $(".fas").on("click", function(){
+    $(".fas").on("click", function () {      
     $("nav ul").toggleClass("showing");
   });
   $("nav ul li").on("click", function(){

@@ -11,22 +11,20 @@
 
 .top-nav {
   width:100%;
-  overflow: hidden;
   top: 0;
 }
 
 nav ul {
-  width: 100%;
-  background-color: #e2b7bc;
-  overflow: hidden;
-  color: white;
-  text-align: right;
-  transition: all 1s ease-in-out;
-  font-size: 1.5em;
-  font-family: 'Laila', serif;
-  word-spacing: 20px;
-  position: fixed;
-  
+    overflow: hidden;
+    width: 100%;
+    background-color: #e2b7bc;
+    color: white;
+    text-align: right;
+    transition: all 1s ease-in-out;
+    font-size: 2em;
+    font-family: 'Laila', serif;
+    word-spacing: 5px;
+    position: fixed;
 }
 
 nav ul li {
@@ -47,38 +45,47 @@ nav ul li:hover {
 
 .menu-bars {
   width: 100%;
-  background-color: #9b6579;
-  text-align: right;
-  box-shadow: border-box;
-  padding: 20px 0px;
+  background-color: #9b6579;  
+  padding: 20px 20px;
   cursor: pointer;
   color: #fff;  
   display: none;
 }
 
-.menu-bars .fas{
-  margin-right: 20px;
+.log {
+    float: left;
+    font-family: 'Sacramento', cursive;    
 }
 
-.log {
-  float: left;
-}
 
 .myName {
- text-align: center;
- padding: 10em;
- height: 100vh;
+    /*border: 2px solid;*/
+    font-family: 'Sacramento', cursive;
+    font-size: 2.5em;
+    text-align: center;
+    padding-top: 100px;
+    margin-top: 100px;
+    position: center;
 }
 
-h1 {
- font-family: 'Sacramento', cursive;
- font-size: 4em;
+.career-description {
+    font-size: 20px;
+    /*border: 2px solid;*/
+    position: center;
 }
 
-p, h4{
- font-family: 'Laila', serif;
- text-align: center;
+.about-me-description {
+    /*border: 2px solid;*/
+    text-align: center;
+    padding: 50px;
+    margin: 50px;
+    position: center;
+}
 
+
+p, h4 {
+    font-family: 'Laila', serif;
+    text-align: center;
 }
 .myProj {
   text-align: center;
@@ -90,33 +97,40 @@ p, h4{
 
 
 .project-tile {
-  border: 1px solid #a87482;
-  width: 100%;
-  padding: 20px;
+    /*border: 1px solid #a87482;*/
+    width: 100%;
+    padding: 20px;
 }
 
-.icon-bar {
-  border: 1px solid #a87482;
-  display: flex;
-  font-size: 2em;
-  transition: all 0.3s ease;
-  
-}
-
-
-.icon-bar a:hover {
-  background-color: #000;
+.social-media-icons {
+    padding: 10px;
+    /*border: 1px solid #a87482;*/
+    display: inline-flex;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
 }
 
 
-.facebook, .twitter, .google, .linkedin, .github {
-  background: #457b8e;
-  color: white;
-  padding: 10px;
-  margin: 1.5em;
-  border-radius: 10px;
+    .social-media-icons a:hover {
+        background-color: #000;
+    }
+
+
+.twitter, .google, .linkedin, .github {
+    background: #457b8e;
+    color: white;
+    padding: 10px;
+    margin: 1px;
+    border-radius: 5px;
 }
 
+.facebook {
+    background: #457b8e;
+    color: white;
+    padding: 10px;
+    margin: 2px;
+    border-radius: 5px;
+}
 
 footer {
   background-color: #e2b7bc;
@@ -125,39 +139,46 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
-  nav ul {
-    max-height: 0px;
-    position: fixed;
-    top: 4.5em;
-  }
+   
+    nav ul {
+        position: fixed;
+        max-height: 0px;
+        top: 4em;
+    }
 
-  nav ul li{
-    box-sizing: border-box;
-    width: 100%;
-    padding: 15px;
-    text-align: center;
-  }
+        nav ul li {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+        }
+   
 
-  .menu-bars {
-    display: block;
-    position: fixed;
-    top: 0;
-  }
-  
-  .log {
-    display: none;
-  }
+    .menu-bars {
+        display: flex;
+        position: fixed;
+       
+    }
 
-  #logo { 
-    float: left;
-    display: block;
-    margin-left: 10px;
-  }
-  
-  .showing {
-    max-height: 20em;
-    position: fixed;
-    top: 4.5em;
+    .log  {
+        display: none;
+    }
+
+    .name-log {
+        font-family: 'Sacramento', cursive;
+        font-size: 2em;       
+    }
+
+    .fas {
+        position: absolute;
+        right: 10px;
+    }
+
+    .showing {
+        max-height: 20em;
+        position: fixed;
+        top: 4em;
   }
   
  .galleryP {
@@ -167,9 +188,9 @@ footer {
  footer {
    background-color: #9b6579; 
   }
-  
-  .icon-bar { 
-    font-size: 1em;
-  }
+
+    .social-media-icons {
+        font-size: 1em;
+    }
 
 }
