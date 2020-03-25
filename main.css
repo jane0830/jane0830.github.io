@@ -9,6 +9,10 @@
   top: 0;
 }
 
+body {
+    background-image: url('images/main-background.png');
+}
+
 .top-nav {
   width:100%;
   top: 0;
@@ -87,12 +91,18 @@ p, h4 {
     font-family: 'Laila', serif;
     text-align: center;
 }
+
+img {
+    width: 300px;
+}
 .myProj {
   text-align: center;
+
 }
 
 .galleryP {
-  display: flex;
+    display: flex;
+    
 }
 
 
@@ -100,6 +110,8 @@ p, h4 {
     /*border: 1px solid #a87482;*/
     width: 100%;
     padding: 20px;
+    
+   
 }
 
 .social-media-icons {

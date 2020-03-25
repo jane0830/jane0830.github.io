@@ -1,41 +1,12 @@
-//get our icons setup in our app
-const icons = {
-    "clear sky": "fas fa-sun",
-    "few clouds": "fas fa-cloud-sun",
-    "scattered clouds": "fas fa-cloud",
-    "broken clouds": "fas fa-cloud-meatball",
-    "shower rain": "fas fa-cloud-showers-heavy",
-    "rain": "fas fa-cloud-rain",
-    "thunderstorm": "fas fa-poo-storm",
-    "snow": "fas fa-snowflake",
-    "mist": "fas fa-wind"
-};
-
-//variables use in my getCurrentDateString
-const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-//it prevent race condition
-let bodyElement, notificationElement, iconElement, tempElement, descriptionElem, locationElem, currDateElement;
-function onload() {
-    bodyElement = document.querySelector("body");
-    notificationElement = document.querySelector(".weather-description p");
-    iconElement = document.querySelector("#weather-icon");
-    tempElement = document.querySelector(".temperature-value p");
-    descriptionElem = document.querySelector(".temperature-description p");
-    locationElem = document.querySelector(".location p");
-    currDateElement = document.querySelector(".current-date p");
-
-    if ("geolocation" in navigator) {
-        navigator.geolocation.getCurrentPosition(getWeather, showError);
-    } else {
-        notificationElement.style.display = "block";
-        notificationElement.innerHTML = "<p>Browser Doesn't Support Geolocation.</p>";
-    }
+//Select elements
+const bodyElement = document.querySelector("body");
+const notificationElement = document.querySelector(".weather-description p");
+const iconElement = document.querySelector(".weather-icon-container");
+const tempElement = document.querySelector(".temperature-value p");   
+const descriptionElem = document.querySelector(".temperature-description p");
+const locationElem = document.querySelector(".location p");
+const currDateElement = document.querySelector(".current-date p");
  
-};
-
-
 //App data
 const weather = {};
 
@@ -47,6 +18,12 @@ weather.temperature = {
 const key = "86f83a43744c26b6095587c0c5b4fbe7";
 
 //check if browser support geolocation
+if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(getWeather, showError);
+} else {
+    notificationElement.style.display = "block";
+    notificationElement.innerHTML = "<p>Browser Doesn't Support Geolocation.</p>";
+}
 
 
 //Show error when is an issue with geolocation service
@@ -82,12 +59,12 @@ function getWeather(position) {
 
 // display weather to ui
 function displayWeather(){
-  bodyElement.className = getTimeOfDay(weather.sunrise, weather.sunset);
-  iconElement.className = icons[weather.description];  
-  tempElement.innerHTML = `${weather.temperature.value} º <span>C</span>`;
-  descriptionElem.innerHTML = weather.description;
-  locationElem.innerHTML = `${weather.city}, ${weather.country}`;
-  currDateElement.innerHTML = getCurrentDateString();
+    bodyElement.className = getTimeOfDay(weather.sunrise, weather.sunset);    
+    iconElement.innerHTML = `<img src="icons/${weather.iconId}.png"/>`;
+    tempElement.innerHTML = `${weather.temperature.value} º <span>C</span>`;
+    descriptionElem.innerHTML = weather.description;
+    locationElem.innerHTML = `${weather.city}, ${weather.country}`;
+    currDateElement.innerHTML = getCurrentDateString();
 };
 
 // K to C conversion
@@ -100,21 +77,25 @@ function celsiusToFahrenheit(temperature){
   return (temperature * 9/5) + 32;  
 }
 
-//when the user clicks on the temperature element
-tempElement.addEventListener("click", function(){
-  if(weather.temperature.value === undefined) return;
-  
-  if(weather.temperature.unit === "celsius"){
-    let fahrenheit = celsiusToFahrenheit(weather.temperature.value);
-    fahrenheit = Math.floor(fahrenheit);    
-    tempElement.innerHTML = `${fahrenheit}º <span>F</span>`;
-    weather.temperature.unit = "fahrenheit";
-  }else{
-    tempElement.innerHTML = `${weather.temperature.value}º <span>C</span>`;
-    weather.temperature.unit = "celsius";
-  }
+//When the user clicks on the temperature element
+tempElement.addEventListener("click", function () {
+    if (weather.temperature.value === undefined) return;
+
+    if (weather.temperature.unit === "celsius") {
+        let fahrenheit = celsiusToFahrenheit(weather.temperature.value);
+        fahrenheit = Math.floor(fahrenheit);
+        tempElement.innerHTML = `${fahrenheit}º <span>F</span>`;
+        weather.temperature.unit = "fahrenheit";
+    } else {
+        tempElement.innerHTML = `${weather.temperature.value}º <span>C</span>`;
+        weather.temperature.unit = "celsius";
+    }
 });
 
+
+//variables use in my getCurrentDateString
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 
 //get the current day 

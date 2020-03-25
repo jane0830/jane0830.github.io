@@ -8,9 +8,8 @@
 body {
     display: flex;
     justify-content: center;
-    padding-top: 3em;
-    /*align-self: center;*/
-    /*background-color: white;*/
+    padding-top: 5em;
+   
 }
 
 .daytime {
@@ -58,60 +57,60 @@ body {
 .container {
     z-index: 3;
     display: inline-block;
-    border: 5px solid yellow;
-    background-color: white;
+    background-color: #e6fcff;    
     justify-content: center;
     align-items: center;
-    padding: 5em 10em;
-    box-shadow: 5px 10px red;    
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px black;
+    color: black;
+    margin: 2em;
+    padding: 2em;
     width: auto;
-    /*height: auto;*/
+    text-shadow: 2px 2px 5px #5b6b6b;   
 }
-.weather-container {
-  /*background-color: coral;*/
-  text-align: center;
-  color: black;
-}
-
-.weather-description {
- /* background-color: blue;*/
-  text-align: center;  
-  padding: 2%;
-  font-size: 40px;
-}
-.weather-icon-container { 
-  /*background-color: coral;*/
-  text-align: center;  
-  padding: 10%;
-  font-size: 150px;
-  color: #1f1f18;
-  
+.weather-container {    
+    text-align: center;   
+   
 }
 
-.temperature-value {
-  /*background-color: blue;*/
-  text-align: center;  
-  padding: 5%;
-  font-size: 40px;
+.weather-description {    
+    text-align: center;
+    font-size: 70px;
 }
-.temperature-description {
-  /*background-color: coral;*/
-  text-align: center;  
-  padding: 5%;
-  font-size: 30px;
-}
-.location {
-  /*background-color: grey;*/
-  text-align: center;  
-  padding: 5%;
-  font-size: 30px;
+.weather-icon-container {    
+    text-align: center;      
 }
 
-.current-date {
-  /*background-color: blue;*/
-  text-align: center;  
-  padding: 5%;
-  font-size: 30px;
+img {
+    width: 470px;
+}
+
+.temperature-value {   
+    text-align: center;
+    font-size: 50px;
+    padding: 20px;
+}
+
+    .temperature-value:hover {
+        cursor: pointer;
+        color: #ba6a96;
+    }
+
+.temperature-description {    
+    text-align: center;
+    padding: 15px;
+    font-size: 40px;
+}
+.location {    
+    text-align: center;
+    padding: 15px;
+    font-size: 40px;
+}
+
+.current-date {    
+    text-align: center;
+    padding: 15px;
+    font-size: 40px;
 }
 
 @keyframes move-twink-back {
@@ -131,5 +130,35 @@ body {
 
     to {
         background-position: 10000px 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 50%;
+        padding: 15px;       
+    }
+
+    img {
+        width: 250px;
+    }
+    .weather-description {
+        font-size: 40px;
+    }
+
+    .temperature-value {
+        font-size: 30px;
+    }
+
+    .temperature-description {
+        font-size: 20px;
+    }
+
+    .location {
+        font-size: 20px;
+    }
+
+    .current-date {
+        font-size: 20px;
     }
 }
