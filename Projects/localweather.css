@@ -133,12 +133,7 @@ img {
     }
 }
 
-@media only screen and (max-width: 768px) {
-
-    body {
-        width: auto;
-    }
-
+@media only screen and (max-width: 600px) {   
 
     .container {
       width: 100%;    }
