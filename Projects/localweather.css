@@ -136,32 +136,34 @@ img {
 @media only screen and (max-width: 600px) {   
 
     .container {
-      width: 100%;    }
+      width: 100%;    
+
+    }
 
     img {
-        width: 250px;
+        width: 200px;
     }
 
     
     .weather-description {
-        font-size: 30px;;
+        font-size: 20px;;
       
     }  
 
     .temperature-value {       
-        font-size: 30px;        
+        font-size: 20px;        
     }
 
     .temperature-description {       
-        font-size: 20px;
+        font-size: 10px;
     }
 
     .location {       
-        font-size: 20px;
+        font-size: 10px;
     }
 
     .current-date {        
-        font-size: 20px;
+        font-size: 10px;
     }
 
 
