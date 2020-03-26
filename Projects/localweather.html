@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" >
     <script src="https://kit.fontawesome.com/553b046368.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Sniglet&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="localweather.css">    
@@ -9,13 +9,13 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <div class="weather-container">
             <div class="weather-description">
                 <p>Weather</p>
             </div>
 
-            <div class="weather-icon-container">               
+            <div class="weather-icon-container">
                 <img id="weather-icon" class="weather-icon" src="icons/unknown.png" />
             </div>
 
@@ -39,9 +39,12 @@
 
     </div>
 
-    <div class="stars"></div>
-    <div class="twinkling"></div>
-    <div class="clouds"></div>
+    <div>
+         <div class="stars"></div>
+         <div class="twinkling"></div>
+         <div class="clouds"></div>
+     </div>
+
 
     <script src="localweather.js"></script>
 </body>

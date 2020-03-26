@@ -109,7 +109,7 @@ function getCurrentDateString(){
 };
 
 
-//dtermines whether or not it is day time 
+//determines whether or not it is day time 
 function getTimeOfDay(sunrise, sunset){
   const sunriseDate = new Date(sunrise * 1000);
   const sunsetDate = new Date(sunset * 1000);

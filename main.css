@@ -11,6 +11,7 @@
 
 body {
     background-image: url('images/main-background.png');
+   
 }
 
 .top-nav {
@@ -67,8 +68,8 @@ nav ul li:hover {
     font-family: 'Sacramento', cursive;
     font-size: 2.5em;
     text-align: center;
-    padding-top: 100px;
-    margin-top: 100px;
+    padding-top: 2.5em;
+    margin-top: 1em;
     position: center;
 }
 
@@ -81,8 +82,8 @@ nav ul li:hover {
 .about-me-description {
     /*border: 2px solid;*/
     text-align: center;
-    padding: 50px;
-    margin: 50px;
+    padding-top: 2em;
+    padding-bottom: 4em;    
     position: center;
 }
 
@@ -90,14 +91,16 @@ nav ul li:hover {
 p, h4 {
     font-family: 'Laila', serif;
     text-align: center;
+   
 }
 
 img {
     width: 300px;
 }
 .myProj {
-  text-align: center;
-
+    text-align: center;
+    padding-top: 5em;
+    margin-top: 5em;
 }
 
 .galleryP {
@@ -108,18 +111,22 @@ img {
 
 .project-tile {
     /*border: 1px solid #a87482;*/
-    width: 100%;
-    padding: 20px;
-    
+    width: 100%; 
    
 }
 
+#contact {
+    padding-top: 2em;   
+    text-align: center;
+}
+
 .social-media-icons {
-    padding: 10px;
+    padding: 2em;
     /*border: 1px solid #a87482;*/
     display: inline-flex;
-    font-size: 1.5em;
+    font-size: 3em;
     transition: all 0.3s ease;
+   
 }
 
 
@@ -150,7 +157,8 @@ footer {
   font-size: 1.5em;
 }
 
-@media screen and (max-width: 600px) {
+/*Extra small devices*/
+@media only screen and (max-width: 600px) {
    
     nav ul {
         position: fixed;
@@ -191,18 +199,73 @@ footer {
         max-height: 20em;
         position: fixed;
         top: 4em;
-  }
-  
- .galleryP {
-   display: block;
-  }
-  
- footer {
-   background-color: #9b6579; 
-  }
+    }
+
+    .myName {
+        font-size: 2em;
+    }
+
+    .about-me-description {
+        /*font-size: ;*/ 
+        padding: 0.5em;
+        margin: 2em;
+    }
+
+    .galleryP {
+        display: block;
+        padding: 0.5em;
+    }
+
+    .project-tile {
+       
+    }
+
+    footer {
+        background-color: #9b6579;
+    }
 
     .social-media-icons {
         font-size: 1em;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    nav ul {
+        font-size: 1.5em;
+        word-spacing: 1px;
+           
+    }
+
+    .myName {
+        padding: 2em;
+    }
+
+    .about-me-description {        
+        text-align: center;
+        padding: 1em;
+        margin: 1em;
+        position: center;
+       
+    }
+
+    img {
+        width: 200px;
+    }
+    
+}
+
+/*ipad pro */
+@media only screen and (min-width: 1025px) and (max-width: 1365px) {
+
+    .about-me-description {
+        font-size: 25px;
+        text-align: center;
+        padding: 1em;
+        margin: 1em;
+        position: center;
     }
 
 }
