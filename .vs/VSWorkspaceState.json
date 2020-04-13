@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\images",
     "\\Projects",
-    "\\Projects\\icons"
+    "\\Projects\\wikipedia_viewer"
   ],
-  "SelectedNode": "\\Projects\\icons",
+  "SelectedNode": "\\Projects\\local_weather_app",
   "PreviewInSolutionExplorer": false
 }
