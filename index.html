@@ -1,44 +1,61 @@
 ﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!--Boostrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Delius|La+Belle+Aurore|Laila:400,700|Sacramento&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Delius|La+Belle+Aurore|Laila:400,700|Sacramento&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
     <title>Janeth Harvey Portfolio</title>
-</head>
+  </head>
+  
   <body>
-    <header id="header" style="z-index: 1;">
-      <nav id="navbar" class="top-nav">
-          <div class="menu-bars">
-              <p class="name-log">Janeth Harvey</p>
-              <i class="fas fa fa-bars fa-2x"></i>
-          </div>
-        
-        <ul>
-          <li class="log">Janeth Harvey</li>
-          <li><a href="#about-me">About me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-                                
-    <section id="about-me" class="welcome-section">
-        <div class="myName">
-            <h1>I'm Janeth Harvey</h1>
-            <div class="career-description">
-                <p>a web developer</p>
-            </div>
-        </div>
-
-       
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <a class="navbar-brand" id="logo" href="index.html">Janeth Harvey</a>
+      <button id="toggleItem" class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation" role="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       
-        <div class="about-me-description">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarText">
+        <ul class="navbar-nav nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item mr-5">
+            <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>  
+          <li class="nav-item mr-5">
+            <a class="nav-link" id="pills-aboutMe-tab" data-toggle="pill" href="#about-me" role="tab" aria-controls="pills-aboutMe" aria-selected="true">About me</a>         
+          </li>
+          <li class="nav-item mr-5">
+            <a class="nav-link" id="pills-projects-tab" data-toggle="pill" href="#projects" role="tab" aria-controls="pills-projects" aria-selected="true">Projects</a>              
+          </li>          
+        </ul>
+        <span></span>
+      </div>
+    </nav>
+    
+   <div class="tab-content" id="pills-tabContent">
+     
+     <!--Home page-->
+     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="pills-home-tab">
+       <div class="card text-center">
+        <div class="profile-image-wrapper card-img-top">
+          <img src="images/profile-image226x237.png" class="profile-image" alt="" />  
+        </div>
+        <div class="card-body">
+          <h3 class="myName">Hi, I'm Janeth Harvey</h3>      
+          <p class="card-text">web developer</p>             
+          <p class="card-text">creating a modern and responsive design for webpages</p>                    
+        </div>
+      </div>                           
+     </div>
+     
+     <!--About me page -->
+     <div class="tab-pane fade" id="about-me" role="tabpanel" aria-labelledby="pills-aboutMe-tab">       
+       
+        <div class="about-me-description container py-5 px-4 aboutMe-container">
             <p>
                 Not too long ago, I made the decision to pursue a career that I could enjoy and that would allow me to express my creativity. Since then, I have been focused on learning and growing as a web developer.
             </p>
@@ -53,63 +70,59 @@
                 My journey is far from over, and I’m excited to use all my passion, creativity and determination to continue growing. I plan to show that growth in the projects on this page.
             </p>
         </div> 
-      
-      
-    </section>
-                                                
-    <section id="projects" class="container">         
-        
-      <div class="row justify-content-md-center" >
+     </div>
+     
+     <!--Projects page -->
+     <div class="tab-pane fade container" id="projects" role="tabpanel" aria-labelledby="pills-projects-tab">    
+        <div class="card-deck justify-content-md-center card-container" >         
           
-          <div class="col-sm">
-              <div class="card" style="width: 18rem;">
-                 <img class="card-img-top" src="images/sct-screenshot.png" alt="Soluciones Contables del Tolima">
+          <div class="card mb-4">
+             <img class="card-img-top card-image img-fluid" src="images/socoto-image.png" alt="Soluciones Contables del Tolima">
+             <div class="card-body">
+               <h5 class="card-title">Soluciones Contables del Tolima</h5>
+               <p class="card-text">A professional website created for an accountant based in the city of Ibagué, Colombia.  Built with ASP.NET Core Razor Pages.</p>
+               <a href="https://www.contadorestolima.com" class="btn">Click Here</a>
+            </div>
+          </div>        
+          
+          <div  class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+          <div class="card mb-4">
+            <img class="card-img-top card-image" src="images/weatherApp-image.png" alt="Local Weather App">
+            <div class="card-body">
+              <h5 class="card-title">Weather App</h5>
+              <p class="card-text">An application that presents the user with the weather in their area, using the OpenWeatherMap API with custom icons.</p>
+              <a href="Projects/local_weather_app/localweather.html" class="btn">Click Here</a>
+            </div>
+            </div>     
+               <div class="card mb-4">
+                 <img class="card-img-top card-image" src="images/wikipediavViewer-image.png" alt="Wikipedia Viewer">
                  <div class="card-body">
-                   <h5 class="card-title">Soluciones Contables del Tolima</h5>
-                   <p class="card-text">A professional website created for an accountant based in the city of Ibagué, Colombia.  Built with ASP.NET Core Razor Pages.</p>
-                   <a href="https://www.contadorestolima.com" class="btn btn-primary">Click Here</a>
+                   <h5 class="card-title">Wikipedia Viewer</h5>
+                   <p class="card-text">An application that allows the user to easily search Wikipedia articles and see a brief summary of the articles' content.</p>
+                   <a href="Projects/wikipedia_viewer/wikipediaviewer.html" class="btn">Click Here</a>
                 </div>
-              </div>
-          </div>
-          
-          <div class="col-sm">
-              <div class="card" style="width: 18rem;">
-                 <img class="card-img-top" src="images/weather-app.png" alt="Local Weather App">
-                 <div class="card-body">
-                   <h5 class="card-title">Weather App</h5>
-                   <p class="card-text">An application that presents the user with the weather in their area, using the OpenWeatherMap API with custom icons.</p>
-                   <a href="Projects/local_weather_app/localweather.html" class="btn btn-primary">Click Here</a>
-                 </div>
-              </div>
-          </div>    
-              
-          <div class="col-sm">
-                   <div class="card" style="width: 18rem;">
-                     <img class="card-img-top" src="images/wikipedia-viewer.png" alt="Wikipedia Viewer">
-                     <div class="card-body">
-                       <h5 class="card-title">Wikipedia Viewer</h5>
-                       <p class="card-text">An application that allows the user to easily search Wikipedia articles and see a brief summary of the articles' content.</p>
-                       <a href="Projects/wikipedia_viewer/wikipediaviewer.html" class="btn btn-primary">Click Here</a>
-                    </div>
-               </div>
-          </div>   
-               
-    </div> 
-        
- </section>
-                                                
-     <section id="contact">
-         <div class="social-media-icons">
-             <a id="profile-link" href="https://github.com/jane0830" target="_blank" class="github"><i class="fa fa-github"></i></a>
-             <a href="https://www.linkedin.com/in/janeth-harvey-1677951b7/" class="linkedin"><i class="fa fa-linkedin"></i></a>
-         </div>
-          
-    </section>  
-    <script src="index.js"></script>
-  </body>
-   <footer>
-    <p>&copy;JH</p>
-  </footer>                                                          
-                               
-                                                            
+           </div>          
+
+       </div>
+      </div>
+
+</div>
+ 
+   <footer class="footer font-small blue fixed-bottom text-center">
+    <div class="social-media-icons" id="contact">
+      <a id="profile-link" href="https://github.com/jane0830" target="_blank" class="github pr-2"><i class="fa fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/janeth-harvey-1677951b7/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  </div>
+   <div class="footer-copyright">© 2020 Copyright:
+    <p>Janeth Harvey</p>
+  </div>
+  </footer>   
+    
+    
+  <!--jQuery j.s Bootstrap JS-->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+  </body> 
 </html>
