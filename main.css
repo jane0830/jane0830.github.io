@@ -95,6 +95,8 @@ button:focus {
 
 .card a {
   color: #59755b;
+  background-color: whitesmoke;
+  border: 1px solid #59755b;
 }
 
 .myName {    
