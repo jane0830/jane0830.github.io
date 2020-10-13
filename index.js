@@ -1,9 +1,7 @@
 //this is to manipulate the navbar
-$(document).ready(function(){
-    $(".fas").on("click", function () {      
-    $("nav ul").toggleClass("showing");
-  });
-  $("nav ul li").on("click", function(){
-    $("nav ul").removeClass("showing");
-  });
-});
+$(document).ready(function(){  
+  $('.nav-link').on('click', function(){
+    $('.collapse').collapse('toggle')
+  })
+
+})
