@@ -1,138 +1,141 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!--Boostrap CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Delius|La+Belle+Aurore|Laila:400,700|Sacramento&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    
-    <title>Janeth Harvey Portfolio</title>
-  </head>
-  
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-custom">
-      <a class="navbar-brand" id="logo" href="index.html">Janeth Harvey</a>
-      <button id="toggleItem" class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation" role="button">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse justify-content-end" id="navbarText">
-        <ul class="navbar-nav nav nav-pills mb-3" id="pills-tab" role="tablist">
-          <li class="nav-item mr-5">
-            <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#home" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>  
-          <li class="nav-item mr-5">
-            <a class="nav-link" id="pills-aboutMe-tab" data-toggle="pill" href="#about-me" role="tab" aria-controls="pills-aboutMe" aria-selected="true">About me</a>         
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Personal Portfolio Webpage</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@500&family=Urbanist:wght@100&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <header>
+    <nav id="navbar" class="navbar">
+      <img class="logo"
+        src="https://github.com/jane0830/fcc-projects/blob/main/responsive-web-design-fcc/personal-portfolio-page/assets/images/janeth-harvey-logo.png?raw=true" />
+      <ul class="nav-links">
+        <input type="checkbox" id="nav_toggle" />
+        <label for="nav_toggle" class="hamburger">&#9776;</label>
+        <div class="menu">
+          <li class="nav-link-item">
+            <a class="nav-link" href="#about-me">About me</a>
           </li>
-          <li class="nav-item mr-5">
-            <a class="nav-link" id="pills-projects-tab" data-toggle="pill" href="#projects" role="tab" aria-controls="pills-projects" aria-selected="true">Projects</a>              
-          </li>          
-        </ul>
-        <span></span>
-      </div>
+          <li class="nav-link-item">
+            <a class="nav-link" href="#projects">My projects</a>
+          </li>
+          <li class="nav-link-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </div>
+      </ul>
     </nav>
-    
-   <div class="tab-content" id="pills-tabContent">
-     
-     <!--Home page-->
-     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="pills-home-tab">
-       <div class="card text-center">
-        <div class="profile-image-wrapper card-img-top">
-          <img src="images/profile-image226x237.png" class="profile-image" alt="" />  
-        </div>
-        <div class="card-body">
-          <h3 class="myName">Hi, I'm Janeth Harvey</h3>      
-          <p class="card-text">web developer</p>             
-          <p class="card-text">creating a modern and responsive design for webpages</p>                    
-        </div>
-      </div>                           
-     </div>
-     
-     <!--About me page -->
-     <div class="tab-pane fade" id="about-me" role="tabpanel" aria-labelledby="pills-aboutMe-tab">       
-       
-        <div class="about-me-description container py-5 px-4 aboutMe-container">
-            <p>
-                Not too long ago, I made the decision to pursue a career that I could enjoy and that would allow me to express my creativity. Since then, I have been focused on learning and growing as a web developer.
-            </p>
-            <p>
-                Being a self-taught developer hasn’t been easy, but the challenges have helped me grow and develop skills that I never knew I had.
-            </p>
-            <p>
-                It is amazing to look back and see the progress I have made, from not even knowing what a variable was to being able to build my own portfolio webpage.
-            </p>
-
-            <p>
-                My journey is far from over, and I’m excited to use all my passion, creativity and determination to continue growing. I plan to show that growth in the projects on this page.
-            </p>
-        </div> 
-     </div>
-     
-     <!--Projects page -->
-     <div class="tab-pane fade container" id="projects" role="tabpanel" aria-labelledby="pills-projects-tab">    
-        <div class="card-deck justify-content-md-center card-container" >         
-          
-          <div class="card mb-4">
-             <img class="card-img-top card-image img-fluid" src="images/socoto-image.png" alt="Soluciones Contables del Tolima">
-             <div class="card-body">
-               <h5 class="card-title">Soluciones Contables del Tolima</h5>
-               <p class="card-text">A professional website created for an accountant based in the city of Ibagué, Colombia.  Built with ASP.NET Core Razor Pages.</p>
-               <a href="https://www.contadorestolima.com" class="btn" target="_blank" rel="noopener noreferrer">Click Here</a>
-            </div>
-          </div>        
-          
-          <div  class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-          <div class="card mb-4">
-            <img class="card-img-top card-image" src="images/weatherApp-image.png" alt="Local Weather App">
-            <div class="card-body">
-              <h5 class="card-title">Weather App</h5>
-              <p class="card-text">An application that presents the user with the weather in their area, using the OpenWeatherMap API with custom icons.</p>
-              <a href="Projects/local_weather_app/localweather.html" class="btn" target="_blank" rel="noopener noreferrer">Click Here</a>
-            </div>
-            </div>
-          
-          <div class="card mb-4">
-            <img class="card-img-top card-image" src="images/calculatorApp860x672.png" alt="Calculator App">
-            <div class="card-body">
-              <h5 class="card-title">Calculator App</h5>
-              <p class="card-text">A basic calculator app written in Javascript (mobile responsive).</p>
-              <a href="Projects/calculator_app/calculator_index.html" class="btn" target="_blank" rel="noopener noreferrer">Click Here</a>
-            </div>
-            </div> 
-          
-               <div class="card mb-4">
-                 <img class="card-img-top card-image" src="images/wikipediavViewer-image.png" alt="Wikipedia Viewer">
-                 <div class="card-body">
-                   <h5 class="card-title">Wikipedia Viewer</h5>
-                   <p class="card-text">An application that allows the user to easily search Wikipedia articles and see a brief summary of the articles' content.</p>
-                   <a href="Projects/wikipedia_viewer/wikipediaviewer.html" class="btn" target="_blank" rel="noopener noreferrer">Click Here</a>
-                </div>
-           </div>          
-
-       </div>
+  </header>
+  <main>
+    <section id="welcome-section" class="welcome-section">
+      <h1>Hi I'm Janeth Harvey</h1>
+      <h4>a web developer</h4>
+    </section>
+    <section id="about-me" class="about-me">
+      <div>
+        <img
+          src="https://github.com/jane0830/fcc-projects/blob/main/responsive-web-design-fcc/personal-portfolio-page/assets/images/profile-image.png?raw=true" />
+      </div>
+      <div>
+        <h2>About me</h2>
+        <p>
+          Not too long ago, I made the decision to pursue a career that I could enjoy and that would allow me to express
+          my creativity. Since then, I have been focused on learning and growing as a web developer.
+        </p>
+        <p>
+          Being a self-taught developer hasn’t been easy, but the challenges have helped me grow and develop skills that
+          I never knew I had.
+        </p>
+        <p>
+          It is amazing to look back and see the progress I have made, from not even knowing what a variable was to
+          being able to build my own portfolio webpage.
+        </p>
+      </div>
+    </section>
+    <section id="projects" class="projects">
+      <div>
+        <h2>My Projects</h2>
+        <p>These are my personal projects</p>
+      </div>
+      <div class="project-gallery-container">
+        <a href="https://codepen.io/jane0830/full/BEexKv" target="_blank" rel="noopener" class="image-wrapper">
+          <figure class="project-tile">
+            <h3>Survey Form</h3>
+            <img src="images/survey-form-project-screenshot.png" />
+            <figcaption>Survey form using HTML forms & CSS</figcaption>
+          </figure>
+        </a>
+        <a href="https://codepen.io/jane0830/full/YMxzQX" target="_blank" rel="noopener" class="image-wrapper">
+          <figure class="project-tile">
+            <h3>Tribute Page</h3>
+            <img src="images/tribute-page-project-screenshot.png" />
+            <figcaption>Tribute page created with HTML & CSS</figcaption>
+          </figure>
+        </a>
+        <a href="https://codepen.io/jane0830/full/QRZNzQ" target="_blank" rel="noopener" class="image-wrapper">
+          <figure class="project-tile">
+            <h3>Technical Documentation Page</h3>
+            <img src="images/technical-doc-page-screenshot.png" />
+            <figcaption>Documentation page with a dynamic navbar</figcaption>
+          </figure>
+        </a>
+        <a href="https://codepen.io/jane0830/full/YbWgeq" target="_blank" rel="noopener" class="image-wrapper">
+          <figure class="project-tile">
+            <h3>Product Landing Page</h3>
+            <img src="images/product-landing-page-screenshot.png" />
+            <figcaption>Creative landing page. My 1st full webpage</figcaption>
+          </figure>
+        </a>
+        <a href="https://codepen.io/jane0830/full/vYNRaGZ" target="_blank" rel="noopener" class="image-wrapper">
+          <figure class="project-tile">
+            <h3>Random Quote Machine</h3>
+            <img src="images/random-quote-machine-screenShoot.png" />
+            <figcaption>Random quote machine. React & Bootstrap</figcaption>
+          </figure>
+        </a>
       </div>
 
-</div>
- 
-   <footer class="footer font-small blue fixed-bottom text-center">
-    <div class="social-media-icons" id="contact">
-      <a id="profile-link" href="https://github.com/jane0830" class="github pr-2" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/janeth-harvey-1677951b7/" class="linkedin" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a>
-  </div>
-   <div class="footer-copyright">© 2020 Copyright:
-    <p>Janeth Harvey</p>
-  </div>
-  </footer>   
-    
-    
-  <!--jQuery j.s Bootstrap JS-->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="index.js"></script>
-  </body> 
+    </section>
+    <section id="contact" class="contact">
+      <h2>Contact me</h2>
+      <div class="icon-wrapper">
+        <a id="profile-link" href="https://www.freecodecamp.org/janethharvey" target="_blank" rel="noopener">
+          <i class="fab fa-free-code-camp"></i>freeCodeCamp
+        </a>
+        <a href="https://github.com/jane0830" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/janeth-harvey-1677951b7/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin-in"></i>LinkedIn
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2022 Copyright:</p>
+    <p>Janeth Harvey Personal Portfolio</p>
+  </footer>
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link-item');
+    const checkbox = document.querySelector('#nav_toggle')
+
+    navLinks.forEach(navLink => {
+      navLink.addEventListener('click', () => {
+        navLink.querySelector('a').click();
+        checkbox.checked = false;
+      });
+    })     
+  </script>
+</body>
+
 </html>

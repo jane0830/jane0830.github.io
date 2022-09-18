@@ -1,0 +1,315 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Urbanist', sans-serif;
+  line-height: 1.5;
+  font-size: 1.1em;
+}
+
+main :not(.welcome-section) {
+  color: #966c45;
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(min-content, 94rem), minmax(2rem, 1fr);
+}
+
+h1,
+h2 {
+  font-family: 'Signika Negative', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* NAVBAR STYLING */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 1px 3px;
+  /* top right bottom left */
+  background-color: #f5f3f2;
+  color: #bd9248;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav-links a {
+  color: #bd9248;
+}
+
+/* LOGO */
+.logo {
+  width: 200px;
+  height: 100px;
+  padding-top: 5px;
+}
+
+/* NAVBAR MENU */
+
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 20px;
+}
+
+.menu li:hover {
+  /* background-color: blue; */
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.menu li {
+  padding: 5px 14px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  user-select: none;
+  padding-top: 0;
+}
+
+/* WELCOME SECTION */
+
+.welcome-section {
+  background-color: #e0bdab;
+  text-align: center;
+  height: 100vh;
+  place-items: center;
+  position: inherit;
+  /* margin-top: 10.5em; */
+  padding-top: 15em;
+}
+
+.welcome-section h1 {
+  font-size: 2em;
+  color: #966c45;
+}
+
+.welcome-section h4 {
+  font-size: 1.5em;
+  color: #faf6f2;
+}
+
+/* ABOUT ME SECTION*/
+
+.about-me {
+  background: no-repeat url("https://github.com/jane0830/fcc-projects/blob/main/responsive-web-design-fcc/personal-portfolio-page/assets/images/profile-imagebg.png?raw=true");
+  gap: 2px;
+  place-items: center;
+  grid-column: 1 / 2;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: justify;
+  padding: 3em;
+}
+
+.about-me h2 {
+  padding: 2em 0 2em 0;
+}
+
+.about-me p {
+  padding-bottom: 2em;
+}
+
+.about-me img {
+  border-radius: 3px;
+}
+
+/* PROJECTS SECTION*/
+
+.projects {
+  padding: 3em;
+}
+
+.projects h2 {
+  padding: 2em 0 1em 0;
+}
+
+.project-gallery-container {
+  gap: 5px;
+  place-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  ;
+  grid-auto-rows: minmax(175px, auto);
+  margin-top: 1em;
+  text-align: center;
+  row-gap: 2em;
+}
+
+.project-tile h3,
+.project-tile figcaption {
+  background-color: #f5f3f2;
+  padding: .5em 0;
+}
+
+.project-tile h3 {
+  border-bottom: 1px solid #b89e84;
+}
+
+.project-tile figcaption {
+  border-top: 1px solid #b89e84;
+}
+
+.project-tile {
+  border: 5px double #b89e84;
+}
+
+.project-tile img {
+  width: 350px;
+  height: 350px;
+}
+
+/* CONTACT ME */
+
+.contact {
+  background-color: #e0bdab;
+  padding-right: 2em;
+}
+
+.contact h2 {
+  place-items: center;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+.contact a {
+  padding-bottom: 2em;
+}
+
+.contact i {
+  place-items: center;
+}
+
+.icon-wrapper {
+  display: grid;
+  font-size: 1.3em;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  place-items: center;
+  padding-bottom: 2em;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  background-color: #f5f3f2;
+  color: #bd9248;
+  padding: 1em 0;
+}
+
+/* MEDIA QURIES */
+@media (max-width: 700px) {
+
+  /* NAVBAR */
+  .menu {
+    display: none;
+    position: absolute;
+    background-color: #f5f3f2;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 10px;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color: #f2e8d8;
+    transition: 0.3s ease;
+    width: 100%;
+  }
+
+  .menu li+li {
+    margin-top: 12px;
+  }
+
+  input[type="checkbox"]:checked~.menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* WELCOME SECTION */
+
+  .welcome-section {
+    padding-top: 12em;
+  }
+
+  .welcome-section h1 {
+    font-size: 1.5em;
+  }
+
+  .welcome-section h4 {
+    font-size: 1em;
+  }
+
+  /* ABOUT ME SECTION */
+
+  .about-me {
+    grid-template-columns: 1fr;
+  }
+
+  /* PROJECTS SECTION */
+
+  .projects {
+    place-items: center;
+  }
+
+  .project-gallery-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* CONTACT SECTION */
+
+  .icon-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+    padding: 1em;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 600px) {
+
+  /* ABOUT ME SECTION*/
+
+  .about-me img {
+    width: 100%;
+  }
+
+  .project-tile img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* CONTACT SECTION */
+
+  .icon-wrapper {
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    font-size: 20px;
+  }
+}
